@@ -1,0 +1,123 @@
+/* ===============================HERO-SLIDER */
+.hero__slider {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 115px);
+}
+.hero__slider .container {
+  padding: 0 130px;
+}
+.hero__slider-wrapper {
+  min-height: 100%;
+}
+.hero__slide {
+  position: relative;
+  width: calc(100vw - 30px);
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 5px 15px 40px rgba(11, 24, 97, 0.32);
+}
+
+.hero__slide img {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.hero__slide-shadow {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  background: linear-gradient(121deg, rgba(4, 5, 17, 0.72) 0%, rgba(88, 88, 88, 0) 100%);
+}
+
+#hero__pagination {
+  position: absolute;
+  bottom: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  z-index: 2;
+}
+
+.hero__pagination-item {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  opacity: 0.9;
+}
+.hero__pagination-item--active {
+  background: #fff;
+}
+.hero__button-prev,
+.hero__button-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translate(0, -50%);
+  transition: var(--transition);
+}
+.hero__button-prev svg,
+.hero__button-next svg {
+  transition: var(--transition);
+  height: 42px;
+  width: 22px;
+}
+.hero__button-prev {
+  left: 40px;
+}
+
+.hero__button-next {
+  right: 40px;
+}
+
+.hero__button-prev.swiper-button-disabled path,
+.hero__button-next.swiper-button-disabled path {
+  fill: #ffffff69;
+}
+.hero__button-prev:hover svg {
+  transform: translate(-50%, 0);
+}
+.hero__button-next:hover svg {
+  transform: translate(50%, 0);
+}
+
+.hero__button-prev.swiper-button-disabled:hover svg,
+.hero__button-next.swiper-button-disabled:hover svg {
+  transform: none;
+}
+
+.hero__slide-content {
+  position: relative;
+  z-index: 2;
+  max-width: 463px;
+  padding-top: calc(30vh - 115px);
+}
+
+.hero__title {
+  margin-bottom: 8px;
+  font-size: 56px;
+  line-height: 1.26;
+}
+
+.hero__text {
+  font-size: 20px;
+  line-height: 1.355;
+  margin-bottom: 37px;
+}
+.hero__button {
+  width: 240px;
+  margin: 0 30px;
+}

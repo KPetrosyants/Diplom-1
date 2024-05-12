@@ -1,0 +1,183 @@
+:root {
+  --main-bg-color: #282b38;
+  --secondary-color: #363a4d;
+  --accent-color-1: #e58d35;
+  --accent-color-2: #89c249;
+  --text-color: #ffffff;
+  --text-color-dark: #85899c;
+  --transition: all 0.4s;
+}
+
+.body {
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.body.burger--opened {
+  overflow: hidden;
+}
+.wrapper {
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  font-family: "Proxima Nova", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.46;
+}
+.header {
+  padding: 25px 0;
+}
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.main {
+  flex: 1 1 100%;
+}
+.footer {
+  padding: 70px 0 50px 0;
+}
+/* ===========================================BURGER */
+
+.burger {
+  width: 40px;
+  height: 40px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.burger span,
+.burger span::before,
+.burger span::after {
+  width: 28px;
+  height: 2px;
+  background: #fff;
+  transition: var(--transition);
+}
+.burger span::before,
+.burger span::after {
+  content: "";
+  position: absolute;
+}
+.burger span {
+  position: relative;
+}
+.burger span::before {
+  top: 10px;
+}
+.burger span::after {
+  top: -10px;
+}
+.burger--opened .burger span {
+  background: transparent;
+}
+.burger--opened .burger span::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+.burger--opened .burger span::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/* ===========================================LOGO */
+.logo {
+  max-width: 172px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo img {
+  width: 100%;
+}
+
+/* ===========================================ANIMATION-LINK */
+.link-action::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent-color-2);
+  transition: var(--transition);
+}
+.link-action:hover::before {
+  width: 90%;
+}
+.button {
+  height: 50px;
+  width: 171px;
+  background: var(--accent-color-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 90px;
+  transition: var(--transition);
+}
+.button:hover {
+  background: var(--accent-color-2);
+}
+.button path {
+  transition: var(--transition);
+}
+.button:hover {
+  background: var(--accent-color-2);
+}
+.button:hover path {
+  fill: #fff;
+}
+.button-arrow {
+  height: 68px;
+  width: 100%;
+  background: var(--accent-color-1);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 22px 0 33px;
+
+  border-radius: 90px;
+
+  transition: var(--transition);
+}
+.button-arrow path {
+  transition: var(--transition);
+}
+.button-arrow:hover {
+  background: var(--accent-color-2);
+}
+.button-arrow:hover path {
+  fill: #fff;
+}
+.title {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* ===========================================SOCIAL */
+.social {
+}
+.social__list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+.social__item a {
+  display: block;
+  height: 33px;
+  width: 33px;
+}
+.social__item img {
+  width: 100%;
+}
