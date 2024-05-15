@@ -52,3 +52,17 @@ a {
   text-decoration: none;
   color: #fff;
 }
+
+.footer .accord__item {
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  transition: var(--transition);
+}
+.footer .accord__title {
+}
+.footer .accord__arrow {
+  display: none;
+}
+.footer .accord__text {
+}

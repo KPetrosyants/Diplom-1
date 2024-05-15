@@ -2,7 +2,7 @@
   padding-top: 100px;
 }
 .calc {
-  margin-bottom: 110px;
+  margin-bottom: 40px;
 }
 .calc__title {
   font-weight: 700;
@@ -22,20 +22,19 @@
 .calc__container {
   display: grid;
   grid-template-columns: 626px auto;
-  grid-template-rows: 90px auto;
+  grid-template-rows: 90px 636px;
   row-gap: 62px;
 }
 .calc__form {
   position: relative;
-  padding: 70px 50px 40px;
   max-height: 490px;
 }
 
-.modal-block {
+/* .modal-block {
   border-radius: 20px;
   background: var(--secondary-color);
   box-shadow: 5px 15px 40px 0 rgba(11, 24, 97, 0.32);
-}
+} */
 .calc__form-bullets {
   position: absolute;
   top: -30px;
@@ -44,6 +43,7 @@
   justify-content: center;
   align-items: center;
   gap: 40px;
+  z-index: 2;
 }
 .calc__form-bullet {
   display: flex;
@@ -76,6 +76,9 @@
 #form3 {
   display: none;
 }
+.finish-block {
+  margin: 70px 50px;
+}
 #form1.active,
 #form2.active,
 #form3.active {
@@ -84,97 +87,27 @@
 .form__body {
   display: grid;
   position: absolute;
-  top: 70px;
-  left: 50px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(5, auto);
   gap: 20px 30px;
   width: calc(100% - 100px);
-  height: calc(100% - 110px);
+  padding: 70px 50px 40px;
+  border-radius: 20px;
+  background: var(--secondary-color);
+  box-shadow: 5px 15px 40px 0 rgba(11, 24, 97, 0.32);
 }
 /* ====================================++======== */
 /* ====================================++======== */
 
-.modal {
-  width: calc(100% - 100px);
-  height: calc(100% - 110px);
-  position: absolute;
-  top: 70px;
-  left: 50px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(5, auto);
-  gap: 20px 30px;
-}
-.modal__input {
-  width: calc(100% - 40px);
-}
-.modal__item:nth-child(1),
-.modal__item:nth-child(2) {
-  grid-column: 1/ -1;
-}
-.modal__item:nth-child(3) {
-  grid-column: 1/ -1;
-  grid-row: 3/5;
-}
-.modal__label {
-}
-.label {
-}
-.modal__input {
-}
-.phone-mask {
-}
-.modal__input-textarea {
-  font-family: "Proxima Nova", Arial, sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 1.26;
-  width: calc(100% - 40px);
-  height: 110px;
-  max-width: 100%;
-  border-radius: 10px;
-  background: #fff;
-  color: #cbcbcb;
-  padding: 18px 20px;
-  resize: none;
-}
-.modal__input-textarea::placeholder {
-  font-family: "Proxima Nova", Arial, sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 1.26;
-  color: #cbcbcb;
-}
-.modal__button-back {
-  max-width: 138px;
-}
-.button-transperent {
-  width: 100%;
-  border: 1px solid var(--accent-color-1);
-  border-radius: 90px;
-  height: 68px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: var(--transition);
-}
-.button-transperent:hover {
-  background: var(--main-bg-color);
-}
-.modal__button {
-  width: 200px;
-}
-.button-arrow {
-}
-
 /* ====================================++======== */
 /* ====================================++======== */
 
-.finish-block {
-}
 .finish-block__img {
+  max-width: 112px;
   margin-bottom: 34px;
+}
+.finish-block__img img {
+  width: 100%;
 }
 .finish-block__title {
   font-weight: 700;
@@ -222,36 +155,9 @@
 }
 /* ====================================++======== */
 /* ====================================++======== */
-.form__item {
-}
-.form__label {
-}
-.label {
-  display: block;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 1.26;
-  margin-bottom: 6px;
-}
+
 .form__input {
   width: calc(100% - 40px);
-}
-.input {
-  max-width: 100%;
-  border-radius: 10px;
-  background: #fff;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 1.26;
-  color: #cbcbcb;
-  height: 20px;
-  padding: 18px 20px;
-}
-.input::placeholder {
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 1.26;
-  color: #cbcbcb;
 }
 
 .form__item:has(.input--err),
@@ -267,6 +173,11 @@
   content: "Введите данные";
   color: #e53535;
   z-index: 3;
+}
+.modal__item:has(.modal__input-textarea.input--err)::after,
+.modal__item:has(.modal__input-textarea.noValid)::after {
+  bottom: 11px;
+  left: 85%;
 }
 .form__item:has(.noValid),
 .modal__item:has(.noValid) {
@@ -287,6 +198,7 @@
   position: relative;
 }
 .form__calc-link {
+  display: inline-block;
   position: absolute;
   top: 0;
   right: 0;
@@ -334,8 +246,7 @@
   grid-template-rows: repeat(2, auto);
   row-gap: 18px;
 }
-.file {
-}
+
 .file__ladel {
   font-size: 15px;
   line-height: 1.26;
@@ -378,7 +289,7 @@
   position: absolute;
   bottom: -120px;
   right: 0;
-  max-width: 150px;
+  max-width: 90px;
 }
 .file__preview span {
   display: inline-block;
@@ -394,9 +305,11 @@
 .form__button {
   grid-row: -1/-2;
   grid-column: 1/-1;
-  width: 253px;
+  max-width: 253px;
+  margin-right: 100px;
 }
 .calc__img {
+  align-self: center;
   position: relative;
   left: -35px;
   transform: translateY(-20px);
@@ -404,5 +317,5 @@
   grid-column: 2/3;
 }
 .calc__img img {
-  width: 100%;
+  height: 100%;
 }

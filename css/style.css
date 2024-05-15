@@ -2,8 +2,23 @@
 @import "header.css";
 @import "hero.css";
 @import "calc.css";
+@import "benefits.css";
+@import "delivery.css";
+@import "service.css";
+@import "about.css";
+@import "issue.css";
+@import "partnership.css";
 @import "footer.css";
+@import "popup.css";
 
+@media (max-width: 1200px) {
+  .section__swiper {
+    max-width: 900px;
+  }
+  .delivery-card__button-block {
+    flex-direction: column;
+  }
+}
 @media (max-width: 1000px) {
   .header__content {
     position: fixed;
@@ -46,6 +61,24 @@
   .header__button svg {
     display: block;
   }
+  /* ==========CALC================== */
+  /* ==========CALC================== */
+  .main__calc {
+    padding-top: 50px;
+  }
+
+  .calc__container {
+    grid-template-columns: minmax(300px, 626px);
+    justify-content: center;
+    grid-template-rows: auto 636px;
+    row-gap: 52px;
+  }
+
+  .calc__img {
+    display: none;
+  }
+
+  /* ============================ */
   /* ============================ */
   .burger {
     position: relative;
@@ -55,6 +88,9 @@
 }
 
 @media (max-width: 900px) {
+  .delivery-card__button-block {
+    flex-direction: column;
+  }
   .hero__slide-content {
     max-width: 335px;
     margin: 0 auto;
@@ -78,8 +114,132 @@
   .hero__button-next {
     right: 15px;
   }
+  /* ========================================= */
+  /* ========================================= */
+  /* ========================================= */
+  .about__img {
+    display: none;
+  }
+
+  /* ========================================= */
+  /* ========================================= */
+  .issues__container {
+    flex-direction: column;
+    align-items: center;
+  }
+  /* ========================================= */
+  /* ========================================= */
+  .footer__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding-top: 34px;
+  }
+  .footer__col:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/-1;
+    gap: 14px;
+    justify-self: center;
+    text-align: center;
+  }
+  .footer__address-adderss {
+    max-width: 200px;
+  }
 }
 
+@media (max-width: 800px) {
+  .partnership {
+    padding: 50px 0;
+  }
+  .partnership__container {
+    justify-content: center;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, auto);
+    gap: 20px 0;
+  }
+
+  .partnership__button {
+    justify-self: center;
+  }
+}
+@media (max-width: 700px) {
+  .calc__title {
+    font-size: 5vw;
+  }
+  .calc__title span {
+    width: 11vw;
+    transform: translateX(2.5vw);
+  }
+  .delivery-card__button {
+    height: 50px;
+  }
+  .footer__container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto);
+    padding-top: 34px;
+    padding-bottom: 50px;
+  }
+  .footer__list-item:hover a {
+    color: var(--secondary-color);
+  }
+  .footer .accord__item {
+    padding: 18px 18px 20px 34px;
+    border-radius: 10px;
+    border: 1px solid #3a444e;
+    transition: var(--transition);
+  }
+  .footer .accord__arrow {
+    display: block;
+  }
+  .footer .accord__text {
+    opacity: 0;
+  }
+  .footer .accord__item--active .accord__text {
+    opacity: 1;
+  }
+  /* =========================MODAL */
+  .popup .modal {
+    padding: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .main__benefits {
+    padding: 40px 0 60px;
+  }
+  .main__delivery {
+    padding-top: 50px;
+  }
+  .main__service {
+    padding: 50px 0;
+  }
+  .main__issues {
+    margin-bottom: 50px;
+  }
+  .form__calc-link {
+    position: absolute;
+    top: 80px;
+    right: 0;
+  }
+
+  .section-title {
+    font-size: 26px;
+    line-height: 1.245;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .about__title.section-title:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .modal__item:has(.modal__input-textarea.input--err)::after,
+  .modal__item:has(.modal__input-textarea.noValid)::after {
+    left: 70%;
+  }
+}
 @media (max-width: 500px) {
   .hero__button-prev,
   .hero__button-next {
@@ -89,5 +249,170 @@
   .hero__button {
     width: 200px;
     margin: 0 30px;
+  }
+  .modal__button {
+    max-width: 200px;
+  }
+
+  /* ===================================== */
+  /* ========FORM============================= */
+  .calc {
+    min-height: 910px;
+  }
+  .form__item:has(.input--err)::after {
+    bottom: -15px;
+  }
+  .form__body {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+    width: calc(100% - 40px);
+    height: calc(100% - 60px);
+    gap: 15px 30px;
+    padding: 40px 20px 30px;
+  }
+  .form__button {
+    margin-top: 10px;
+  }
+  .form__calc-link {
+    top: 0;
+  }
+  .form__item-file {
+    align-content: space-evenly;
+    row-gap: 0;
+  }
+  .file__delete {
+    padding: 3px 0;
+  }
+
+  .calc__form {
+    min-height: 760px;
+  }
+  .modal {
+    grid-template-rows: auto;
+    row-gap: 15px;
+    padding: 40px 20px 20px;
+    width: calc(100% - 40px);
+    grid-template-rows: repeat(6, auto);
+  }
+  .modal__button-back {
+    grid-row: -1/-2;
+  }
+  .modal__button-back,
+  .modal__button {
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+  .main__delivery {
+    margin-bottom: 50px;
+  }
+  .partnership__text-list {
+    font-size: 14px;
+  }
+  .popup .modal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    gap: 10px 20px;
+    padding: 70px 50px 40;
+  }
+}
+@media (max-width: 400px) {
+  .form__body {
+    gap: 0px 30px;
+  }
+  .form__input,
+  .modal__input {
+    width: calc(100% - 20px);
+  }
+  .input {
+    padding: 9px 10px;
+  }
+  .form__item:has(.input--err)::after {
+    bottom: 1px;
+  }
+  .calc__form-bullets {
+    left: 10px;
+  }
+  .file__button:has(span) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 90px;
+  }
+  .file__preview {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: none;
+    max-height: 80px;
+  }
+  .file__preview span {
+    width: 100%;
+    height: 80px;
+  }
+  .file__preview img {
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  .form__button {
+    align-self: center;
+    justify-self: center;
+    margin-right: 0;
+  }
+  .finish-block {
+    margin: 50px 10px;
+  }
+  .finish-block__title {
+    font-size: 8vw;
+  }
+  .finish-block__subtitle {
+    font-size: 6vw;
+  }
+  .finish-block__img {
+    margin-bottom: 5px;
+  }
+  .finish-block__img img {
+    max-width: 60px;
+  }
+  .delivery-card__img {
+    margin-bottom: 5px;
+  }
+  .delivery-card__value {
+    font-size: 18px;
+  }
+  .delivery-card__span-value {
+    font-weight: 700;
+    font-size: 35px;
+    color: #fff;
+  }
+  .delivery-card__button {
+    height: 40px;
+    width: 80%;
+  }
+  .delivery-card__text {
+    font-size: 14px;
+    gap: 5px;
+    margin-bottom: 7px;
+  }
+  .delivery-card {
+    padding-bottom: 10px;
+  }
+  .service-card {
+    min-height: 420px;
+  }
+
+  .benefits-pagination.swiper-pagination {
+    gap: 10px;
+  }
+  /* ==============================issue-form */
+  .issue-form {
+    padding: 20px;
+  }
+  .issue-form__input {
+    width: calc(100% - 20px);
+  }
+  .accord__item {
+    padding: 10px 10px 10px 14px;
   }
 }

@@ -53,9 +53,11 @@
   width: 8px;
   height: 8px;
   opacity: 0.9;
+  transition: var(--transition);
 }
 .hero__pagination-item--active {
   background: #fff;
+  opacity: 1;
 }
 .hero__button-prev,
 .hero__button-next {
