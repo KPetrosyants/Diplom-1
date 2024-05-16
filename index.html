@@ -335,7 +335,7 @@
                       />
                     </div>
                     <div class="modal__item">
-                      <label for="comment1" class="modal__label label">Комментарий:</label>
+                      <label for="comment2" class="modal__label label">Комментарий:</label>
                       <textarea
                         class="modal__input-textarea"
                         placeholder="Подробности о товаре, описание, количество"
@@ -1627,6 +1627,78 @@
             </div>
           </div>
         </form>
+      </div>
+    </div>
+    <div class="popup">
+      <div class="popup__body-calc">
+        <div class="popupCalc">
+          <h5 class="popupCalc__title">Рассчитать объем</h5>
+          <div class="popupCalc__item">
+            <label for="measurement">Единица измерения:</label>
+            <select id="measurement">
+              <option value="m">метр</option>
+              <option value="sm">сантиметр</option>
+              <option value="mm">миллиметр</option>
+            </select>
+          </div>
+          <div class="popupCalc__item">
+            <label for="popupCalc-length" class="popupCalc__label label">Длина:</label>
+            <input
+              type="number"
+              class="popupCalc__input input"
+              placeholder="0"
+              id="popupCalc-length"
+            />
+          </div>
+          <div class="popupCalc__item">
+            <label for="popupCalc-width" class="popupCalc__label label">Ширина:</label>
+            <input
+              type="number"
+              class="popupCalc__input input"
+              placeholder="0"
+              id="popupCalc-width"
+            />
+          </div>
+          <div class="popupCalc__item">
+            <label for="popupCalc-height" class="popupCalc__label label">Высота:</label>
+            <input
+              type="number"
+              class="popupCalc__input input"
+              placeholder="0"
+              id="popupCalc-height"
+            />
+          </div>
+          <div class="popupCalc__item">
+            <button class="popupCalc__button button-arrow">
+              Рассчитать<svg
+                width="27"
+                height="27"
+                viewBox="0 0 27 27"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.40625 13.5012C0.40625 6.27661 6.25977 0.423096 13.4844 0.423096C20.709 0.423096 26.5625 6.27661 26.5625 13.5012C26.5625 20.7258 20.709 26.5793 13.4844 26.5793C6.25977 26.5793 0.40625 20.7258 0.40625 13.5012ZM13.4844 24.8918C19.7439 24.8918 24.875 19.8241 24.875 13.5012C24.875 7.24165 19.8072 2.1106 13.4844 2.1106C7.2248 2.1106 2.09375 7.17837 2.09375 13.5012C2.09375 19.7608 7.16152 24.8918 13.4844 24.8918ZM14.1436 20.0139L20.2133 13.9495C20.4611 13.7016 20.4611 13.3008 20.2133 13.053L14.1436 6.98853C13.8957 6.74067 13.4949 6.74067 13.2471 6.98853L12.8832 7.35239C12.6354 7.60024 12.6354 8.01157 12.8937 8.25415L17.4025 12.6047H7.36719C7.01914 12.6047 6.73438 12.8895 6.73438 13.2375V13.7649C6.73438 14.1129 7.01914 14.3977 7.36719 14.3977H17.4025L12.8885 18.7483C12.6354 18.9961 12.6301 19.4022 12.8779 19.65L13.2418 20.0139C13.4949 20.2618 13.8957 20.2618 14.1436 20.0139Z"
+                  fill="#B16519"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="popup__clouser">
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 13 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.69099 6.5001L12.7529 1.4379C13.0824 1.10862 13.0824 0.576231 12.7529 0.246956C12.4237 -0.0823187 11.8913 -0.0823187 11.562 0.246956L6.49992 5.30915L1.43798 0.246956C1.10856 -0.0823187 0.576335 -0.0823187 0.247067 0.246956C-0.0823556 0.576231 -0.0823556 1.10862 0.247067 1.4379L5.30901 6.5001L0.247067 11.5623C-0.0823556 11.8916 -0.0823556 12.424 0.247067 12.7532C0.411161 12.9175 0.62692 13 0.842525 13C1.05813 13 1.27374 12.9175 1.43798 12.7532L6.49992 7.69104L11.562 12.7532C11.7263 12.9175 11.9419 13 12.1575 13C12.3731 13 12.5887 12.9175 12.7529 12.7532C13.0824 12.424 13.0824 11.8916 12.7529 11.5623L7.69099 6.5001Z"
+                fill="#7E839A"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
     <script src="https://unpkg.com/imask"></script>

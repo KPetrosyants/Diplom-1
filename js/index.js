@@ -28,6 +28,15 @@ body.addEventListener("click", (e) => {
   ) {
     popupOpener(e);
   }
+  if (
+    target.closest(".form__calc-link") ||
+    target.closest(".popup__body-calc") ||
+    target.closest(".popup__clouser") ||
+    target.classList.contains("popup")
+  ) {
+    popupCalcOpener(e);
+  }
+
   if (target.closest(".issue-form__button")) {
     e.preventDefault();
     validateForm(".issue-form");
@@ -50,11 +59,54 @@ function popupOpener(e) {
   e.preventDefault();
   const target = e.target;
   body.classList.add("popup--opened");
+
   if (target.classList.contains("popup") || target.closest(".popup__clouser")) {
     body.classList.remove("popup--opened");
   }
 }
+function popupCalcOpener(e) {
+  e.preventDefault();
+  const target = e.target;
+  body.classList.add("popupCalc--opened");
+  if (
+    target.classList.contains("popup__body-calc") ||
+    target.classList.contains("popup") ||
+    target.closest(".popup__clouser")
+  ) {
+    body.classList.remove("popupCalc--opened");
+    return;
+  }
+  if (target.closest(".popupCalc__button")) {
+    const inputResult = document.getElementById("form-volume");
+    inputResult.value = calculeteValue(e);
+    body.classList.remove("popupCalc--opened");
+  }
+}
+function calculeteValue(e) {
+  let result = 1;
+  const selected = document.getElementById("measurement").value;
+  const valueInpyts = document.querySelectorAll(".popupCalc__input");
+  for (let input of valueInpyts) {
+    console.log(input.value);
 
+    if (!regexNumber.test(input.value)) {
+      return 0;
+    }
+    result = result * input.value;
+  }
+  switch (selected) {
+    case "sm":
+      result = result / Math.pow(10, 6);
+      break;
+    case "mm":
+      result = result / Math.pow(10, 9);
+      break;
+    default:
+      result;
+      break;
+  }
+  return result;
+}
 function accrodItemActiveted(e) {
   if (e.target.closest(".footer__list-item")) e.preventDefault();
 
@@ -148,7 +200,6 @@ function validateForm(formName) {
   if (formTextarea) {
     allEl = [...allEl, ...formTextarea];
   }
-  console.log(allEl);
 
   for (let input of allEl) {
     input.classList.remove("input--err");

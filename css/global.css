@@ -29,6 +29,12 @@ html {
 .body.popup--opened .wrapper {
   filter: blur(3px);
 }
+.body.popupCalc--opened {
+  overflow: hidden;
+}
+.body.popupCalc--opened .wrapper {
+  filter: blur(3px);
+}
 .wrapper {
   height: 100%;
   min-height: 100vh;
