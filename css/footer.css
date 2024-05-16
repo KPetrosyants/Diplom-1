@@ -11,9 +11,6 @@
   grid-template-rows: repeat(3, auto);
   gap: 28px;
 }
-.footer__logo {
-}
-
 .footer__address {
   font-size: 14px;
   line-height: 1.625;
@@ -25,11 +22,6 @@ a {
 .footer__address-email {
   text-decoration: underline;
 }
-.footer__address-adderss {
-}
-.footer__address-index {
-}
-
 .footer__list-title {
   font-weight: 700;
   font-size: 20px;
@@ -59,10 +51,6 @@ a {
   border: none;
   transition: var(--transition);
 }
-.footer .accord__title {
-}
 .footer .accord__arrow {
   display: none;
-}
-.footer .accord__text {
 }

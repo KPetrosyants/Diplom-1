@@ -31,19 +31,19 @@
               <nav class="header__nav nav">
                 <ul class="nav__list">
                   <li class="nav__list-item">
-                    <a href="#" class="nav__link link-action">Цены и сроки</a>
+                    <a href="#delivery" class="nav__link link-action">Цены и сроки</a>
                   </li>
                   <li class="nav__list-item">
-                    <a href="#" class="nav__link link-action">Услуги</a>
+                    <a href="#service" class="nav__link link-action">Услуги</a>
                   </li>
                   <li class="nav__list-item">
-                    <a href="#" class="nav__link link-action">О компании</a>
+                    <a href="#about" class="nav__link link-action">О компании</a>
                   </li>
                   <li class="nav__list-item">
-                    <a href="#" class="nav__link link-action">Контакты</a>
+                    <a href="#footer" class="nav__link link-action">Контакты</a>
                   </li>
                   <li class="nav__list-item">
-                    <a href="#" class="nav__link link-action">Оформить груз</a>
+                    <a href="#partnership" class="nav__link link-action">Оформить груз</a>
                   </li>
                 </ul>
               </nav>
@@ -81,7 +81,7 @@
                     <div class="hero__slide-content">
                       <h1 class="hero__title title">Прямое КАРГО из Китая</h1>
                       <p class="hero__text">Доставляем любые грузы из Китая по честной цене</p>
-                      <a href="#" class="hero__button button-arrow"
+                      <a href="#calc" class="hero__button button-arrow"
                         >Рассчитать стоимость<svg
                           width="27"
                           height="27"
@@ -99,7 +99,7 @@
                   </div>
                 </div>
                 <div class="hero__slide swiper-slide">
-                  <img src="./images/content/banners/banner2.jpg" alt="#" />
+                  <img src="./images/content/banners/banner2.jpg" alt="#calc" />
                   <div class="hero__slide-shadow"></div>
                   <div class="container">
                     <div class="hero__slide-content">
@@ -107,7 +107,7 @@
                       <p class="hero__text">
                         Если мы не уложимся в обозначенные сроки, доставка груза со скидкой до 90%
                       </p>
-                      <a href="#" class="hero__button button-arrow"
+                      <a href="#calc" class="hero__button button-arrow"
                         >Рассчитать стоимость<svg
                           width="27"
                           height="27"
@@ -125,7 +125,7 @@
                   </div>
                 </div>
                 <div class="hero__slide swiper-slide">
-                  <img src="./images/content/banners/banner3.jpg" alt="#" />
+                  <img src="./images/content/banners/banner3.jpg" alt="#calc" />
                   <div class="hero__slide-shadow"></div>
                   <div class="container">
                     <div class="hero__slide-content">
@@ -133,7 +133,7 @@
                       <p class="hero__text">
                         Выкуп и доставка товаров с китайских торговых площадок.
                       </p>
-                      <a href="#" class="hero__button button-arrow"
+                      <a href="#calc" class="hero__button button-arrow"
                         >Рассчитать стоимость<svg
                           width="27"
                           height="27"
@@ -151,7 +151,7 @@
                   </div>
                 </div>
                 <div class="hero__slide swiper-slide">
-                  <img src="./images/content/banners/banner4.jpg" alt="#" />
+                  <img src="./images/content/banners/banner4.jpg" alt="#calc" />
                   <div class="hero__slide-shadow"></div>
                   <div class="container">
                     <div class="hero__slide-content">
@@ -159,7 +159,7 @@
                       <p class="hero__text">
                         Доставка автотранспортом из Китая в Россию от 15 дней, от $0,5/кг
                       </p>
-                      <a href="#" class="hero__button button-arrow"
+                      <a href="#calc" class="hero__button button-arrow"
                         >Рассчитать стоимость<svg
                           width="27"
                           height="27"
@@ -209,7 +209,7 @@
             </div>
           </div>
         </section>
-        <section class="main__calc calc">
+        <section class="main__calc calc" id="calc">
           <div class="container">
             <div class="calc__container">
               <h2 class="title calc__title">
@@ -229,13 +229,13 @@
                         type="text"
                         class="form__input input regexWord"
                         placeholder="Категория товара"
-                        id="form-category "
+                        id="form-category"
                       />
                     </div>
                     <div class="form__item">
                       <label for="form-value" class="form__label label">Стоимость груза:</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form__input input regexNumber"
                         placeholder="Введите стоимость"
                         id="form-value"
@@ -244,7 +244,7 @@
                     <div class="form__item">
                       <label for="form-weight" class="form__label label">Вес груза (кг):</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form__input input regexNumber"
                         placeholder="Введите вес"
                         id="form-weight"
@@ -254,7 +254,7 @@
                       <a href="#" class="form__calc-link">Рассчитать</a>
                       <label for="form-volume" class="form__label label">Объем груза (м3):</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form__input input regexNumber"
                         placeholder="Введите объем"
                         id="form-volume"
@@ -263,17 +263,17 @@
                     <div class="form__item">
                       <div class="form__item-radio">
                         <input type="radio" name="form-radio" id="form-radio-1" />
-                        <label for="form-radio-1 label">Страховка</label>
+                        <label for="form-radio-1">Страховка</label>
                       </div>
                       <div class="form__item-radio">
                         <input type="radio" name="form-radio" id="form-radio-2" />
-                        <label for="form-radio-2 label">Таможенное оформление</label>
+                        <label for="form-radio-2">Таможенное оформление</label>
                       </div>
                     </div>
                     <div class="form__item">
                       <label for="form-code" class="form__label label">Код ТН ВЭД:</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form__input input"
                         placeholder="Введите код"
                         id="form-code"
@@ -321,8 +321,17 @@
                       <input
                         type="text"
                         class="modal__input input phone-mask"
-                        placeholder=""
+                        placeholder="+7 (___) ___ - __ - __ "
                         id="phone1"
+                      />
+                    </div>
+                    <div class="modal__item">
+                      <label for="email1" class="modal__label label">Email:</label>
+                      <input
+                        type="text"
+                        class="modal__input input regexEmail"
+                        placeholder="Введите e-mail"
+                        id="email1"
                       />
                     </div>
                     <div class="modal__item">
@@ -461,7 +470,7 @@
             </div>
           </div>
         </section>
-        <section class="delivery main__delivery">
+        <section class="delivery main__delivery" id="delivery">
           <div class="container">
             <div class="delivery__container">
               <h2 class="section-title title delivery__title">Варианты доставки грузов из Китая</h2>
@@ -526,9 +535,7 @@
                                 />
                               </g>
                               <defs>
-                                <clipPath id="clip0_5856_2784">
-                                  <rect width="22" height="22" fill="white" />
-                                </clipPath>
+                                <rect width="22" height="22" fill="white" />
                               </defs>
                             </svg>
                             9-15 дней
@@ -619,9 +626,7 @@
                                 />
                               </g>
                               <defs>
-                                <clipPath id="clip0_5856_2784">
-                                  <rect width="22" height="22" fill="white" />
-                                </clipPath>
+                                <rect width="22" height="22" fill="white" />
                               </defs>
                             </svg>
                             9-15 дней
@@ -712,9 +717,7 @@
                                 />
                               </g>
                               <defs>
-                                <clipPath id="clip0_5856_2784">
-                                  <rect width="22" height="22" fill="white" />
-                                </clipPath>
+                                <rect width="22" height="22" fill="white" />
                               </defs>
                             </svg>
                             9-15 дней
@@ -805,9 +808,7 @@
                                 />
                               </g>
                               <defs>
-                                <clipPath id="clip0_5856_2784">
-                                  <rect width="22" height="22" fill="white" />
-                                </clipPath>
+                                <rect width="22" height="22" fill="white" />
                               </defs>
                             </svg>
                             9-15 дней
@@ -898,9 +899,7 @@
                                 />
                               </g>
                               <defs>
-                                <clipPath id="clip0_5856_2784">
-                                  <rect width="22" height="22" fill="white" />
-                                </clipPath>
+                                <rect width="22" height="22" fill="white" />
                               </defs>
                             </svg>
                             9-15 дней
@@ -967,7 +966,7 @@
             </div>
           </div>
         </section>
-        <section class="service main__service">
+        <section class="service main__service" id="service">
           <div class="container">
             <div class="service__container">
               <h2 class="section-title title service__title">Услуги</h2>
@@ -1064,7 +1063,7 @@
             </div>
           </div>
         </section>
-        <section class="about main__about">
+        <section class="about main__about" id="about">
           <div class="container">
             <div class="about__container">
               <div class="about__content">
@@ -1111,14 +1110,12 @@
                           />
                         </g>
                         <defs>
-                          <clipPath id="clip0_5858_63">
-                            <rect
-                              width="27"
-                              height="27"
-                              fill="white"
-                              transform="matrix(-1 0 0 1 27 0)"
-                            />
-                          </clipPath>
+                          <rect
+                            width="27"
+                            height="27"
+                            fill="white"
+                            transform="matrix(-1 0 0 1 27 0)"
+                          />
                         </defs>
                       </svg>
                     </div>
@@ -1147,14 +1144,12 @@
                           />
                         </g>
                         <defs>
-                          <clipPath id="clip0_5858_63">
-                            <rect
-                              width="27"
-                              height="27"
-                              fill="white"
-                              transform="matrix(-1 0 0 1 27 0)"
-                            />
-                          </clipPath>
+                          <rect
+                            width="27"
+                            height="27"
+                            fill="white"
+                            transform="matrix(-1 0 0 1 27 0)"
+                          />
                         </defs>
                       </svg>
                     </div>
@@ -1183,14 +1178,12 @@
                           />
                         </g>
                         <defs>
-                          <clipPath id="clip0_5858_63">
-                            <rect
-                              width="27"
-                              height="27"
-                              fill="white"
-                              transform="matrix(-1 0 0 1 27 0)"
-                            />
-                          </clipPath>
+                          <rect
+                            width="27"
+                            height="27"
+                            fill="white"
+                            transform="matrix(-1 0 0 1 27 0)"
+                          />
                         </defs>
                       </svg>
                     </div>
@@ -1219,14 +1212,12 @@
                           />
                         </g>
                         <defs>
-                          <clipPath id="clip0_5858_63">
-                            <rect
-                              width="27"
-                              height="27"
-                              fill="white"
-                              transform="matrix(-1 0 0 1 27 0)"
-                            />
-                          </clipPath>
+                          <rect
+                            width="27"
+                            height="27"
+                            fill="white"
+                            transform="matrix(-1 0 0 1 27 0)"
+                          />
                         </defs>
                       </svg>
                     </div>
@@ -1255,14 +1246,12 @@
                           />
                         </g>
                         <defs>
-                          <clipPath id="clip0_5858_63">
-                            <rect
-                              width="27"
-                              height="27"
-                              fill="white"
-                              transform="matrix(-1 0 0 1 27 0)"
-                            />
-                          </clipPath>
+                          <rect
+                            width="27"
+                            height="27"
+                            fill="white"
+                            transform="matrix(-1 0 0 1 27 0)"
+                          />
                         </defs>
                       </svg>
                     </div>
@@ -1291,14 +1280,12 @@
                           />
                         </g>
                         <defs>
-                          <clipPath id="clip0_5858_63">
-                            <rect
-                              width="27"
-                              height="27"
-                              fill="white"
-                              transform="matrix(-1 0 0 1 27 0)"
-                            />
-                          </clipPath>
+                          <rect
+                            width="27"
+                            height="27"
+                            fill="white"
+                            transform="matrix(-1 0 0 1 27 0)"
+                          />
                         </defs>
                       </svg>
                     </div>
@@ -1331,7 +1318,7 @@
                     />
                   </div>
                   <div class="issue-form__item">
-                    <input type="text" class="issue-form__input input" placeholder="E-mail" />
+                    <input type="email" class="issue-form__input input" placeholder="E-mail" />
                   </div>
                   <div class="issue-form__item">
                     <textarea
@@ -1359,7 +1346,7 @@
             </div>
           </div>
         </section>
-        <section class="main__partnership partnership">
+        <section class="main__partnership partnership" id="partnership">
           <div class="container">
             <h2 class="title partnership__title section-title">
               Готовы к сотрудничеству<span class="partnership__subtitle"
@@ -1425,7 +1412,7 @@
         </section>
       </main>
 
-      <footer class="footer">
+      <footer class="footer" id="footer">
         <div class="container">
           <div class="footer__container">
             <div class="footer__col">
@@ -1482,14 +1469,7 @@
                       />
                     </g>
                     <defs>
-                      <clipPath id="clip0_5858_63">
-                        <rect
-                          width="27"
-                          height="27"
-                          fill="white"
-                          transform="matrix(-1 0 0 1 27 0)"
-                        />
-                      </clipPath>
+                      <rect width="27" height="27" fill="white" transform="matrix(-1 0 0 1 27 0)" />
                     </defs>
                   </svg>
                 </div>
@@ -1520,14 +1500,7 @@
                       />
                     </g>
                     <defs>
-                      <clipPath id="clip0_5858_63">
-                        <rect
-                          width="27"
-                          height="27"
-                          fill="white"
-                          transform="matrix(-1 0 0 1 27 0)"
-                        />
-                      </clipPath>
+                      <rect width="27" height="27" fill="white" transform="matrix(-1 0 0 1 27 0)" />
                     </defs>
                   </svg>
                 </div>
@@ -1557,14 +1530,7 @@
                       />
                     </g>
                     <defs>
-                      <clipPath id="clip0_5858_63">
-                        <rect
-                          width="27"
-                          height="27"
-                          fill="white"
-                          transform="matrix(-1 0 0 1 27 0)"
-                        />
-                      </clipPath>
+                      <rect width="27" height="27" fill="white" transform="matrix(-1 0 0 1 27 0)" />
                     </defs>
                   </svg>
                 </div>
