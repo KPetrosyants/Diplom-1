@@ -8,7 +8,7 @@ const regexPhone =
   /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
 const regexEmail =
   /^((([0-9A-Za-z]{1}[-0-9A-z.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}.){1,2}[-A-Za-z]{2,})$/u;
-// const regexNumber = /[0-9]/;
+const regexNumber = /[0-9]/;
 const regexWord = /[A-Za-zА-Яа-яЁё]/;
 
 // if (accordPreload) {
@@ -23,10 +23,14 @@ body.addEventListener("click", (e) => {
   if (target.closest(".accord__item")) accrodItemActiveted(e);
   if (
     target.closest(".popup-opener") ||
-    target.classList.contains(".popup") ||
+    target.classList.contains("popup") ||
     target.closest(".popup__clouser")
   ) {
     popupOpener(e);
+  }
+  if (target.closest(".issue-form__button")) {
+    e.preventDefault();
+    validateForm(".issue-form");
   }
 });
 
@@ -136,18 +140,25 @@ function switchForms(e) {
 
 function validateForm(formName) {
   const form = document.querySelector(formName);
-  const formInputs = form.querySelectorAll("input[type=text]");
-  const formTextarea = form.querySelector("textarea");
-
-  let allEl = [];
+  const formInputsText = form.querySelectorAll("input[type=text]");
+  const formInputsNumber = form.querySelectorAll("input[type=number]");
+  const formInputsEmail = form.querySelectorAll("input[type=email]");
+  const formTextarea = form.querySelectorAll("textarea");
+  let allEl = [...formInputsText, ...formInputsNumber, ...formInputsEmail];
   if (formTextarea) {
-    allEl = new Set(formInputs).add(formTextarea);
+    allEl = [...allEl, ...formTextarea];
   }
+  console.log(allEl);
 
   for (let input of allEl) {
     input.classList.remove("input--err");
     input.classList.remove("noValid");
-    if (input.value == "") {
+    if (
+      input.value == "" &&
+      (input.classList.contains("regexWord") ||
+        input.classList.contains("regexEmail") ||
+        input.classList.contains("regexNumber"))
+    ) {
       input.classList.add("input--err");
     }
     if (
@@ -171,6 +182,7 @@ function validateForm(formName) {
   for (let input of allEl) {
     input.value = "";
   }
+
   return true;
 }
 // ====================================================
@@ -235,9 +247,9 @@ const heroSwiper = new Swiper(".hero__slider", {
   loop: true,
   slidesPerView: "auto",
   centeredSlides: true,
-    autoplay: {
-      delay: 3000,
-    },
+  //   autoplay: {
+  //     delay: 3000,
+  //   },
   pagination: {
     el: ".hero__pagination",
     clickable: true,
