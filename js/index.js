@@ -300,9 +300,9 @@ const heroSwiper = new Swiper(".hero__slider", {
   loop: true,
   slidesPerView: "auto",
   centeredSlides: true,
-  //   autoplay: {
-  //     delay: 3000,
-  //   },
+    autoplay: {
+      delay: 3000,
+    },
   pagination: {
     el: ".hero__pagination",
     clickable: true,
