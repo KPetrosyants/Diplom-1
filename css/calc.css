@@ -291,9 +291,11 @@
 }
 .file__preview {
   position: absolute;
-  bottom: -120px;
-  right: 0;
+  bottom: -110px;
+  right: 10%;
   max-width: 90px;
+  max-height: 100px;
+  overflow: hidden;
 }
 .file__preview span {
   display: inline-block;

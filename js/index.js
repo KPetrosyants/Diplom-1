@@ -242,7 +242,8 @@ function validateForm(formName) {
 // ====================================================
 
 function handleFileSelect(evt) {
-  const previewArea = document.querySelector(".file__preview");
+  const previewArea = document.getElementById("file-preview");
+
   if (evt.target.closest(".file__delete")) {
     previewArea.innerHTML = "";
     return;
@@ -260,7 +261,7 @@ function handleFileSelect(evt) {
       // Render thumbnail.
       const span = document.createElement("span");
       span.innerHTML = [
-        '<img class="thumb" title="',
+        '<img class="img-preview" title="',
         escape(theFile.name),
         '" src="',
         e.target.result,
@@ -270,6 +271,7 @@ function handleFileSelect(evt) {
     };
   })(f);
   // Read in the image file as a data URL.
+
   reader.readAsDataURL(f);
 }
 document.getElementById("form-file").addEventListener("change", handleFileSelect, false);
