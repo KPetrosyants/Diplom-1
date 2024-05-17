@@ -20,6 +20,7 @@ const regexWord = /[A-Za-zА-Яа-яЁё]/;
 body.addEventListener("click", (e) => {
   const target = e.target;
   if (target.closest(".burger")) burgerOpener(e);
+  if (body.classList.contains("burger--opened")) burgerClouser(e);
   if (target.closest(".accord__item")) accrodItemActiveted(e);
   if (
     target.closest(".popup-opener") ||
@@ -139,7 +140,18 @@ window.addEventListener(
   true
 );
 function burgerOpener(e) {
+  const target = e.target;
   body.classList.toggle("burger--opened");
+}
+function burgerClouser(e) {
+  const target = e.target;
+  if (
+    target.closest(".header__button") ||
+    target.closest(".nav__link") ||
+    target.closest(".main")
+  ) {
+    body.classList.remove("burger--opened");
+  }
 }
 
 // ===================================================SECTION-CALC
@@ -300,9 +312,9 @@ const heroSwiper = new Swiper(".hero__slider", {
   loop: true,
   slidesPerView: "auto",
   centeredSlides: true,
-    autoplay: {
-      delay: 3000,
-    },
+  //   autoplay: {
+  //     delay: 3000,
+  //   },
   pagination: {
     el: ".hero__pagination",
     clickable: true,
