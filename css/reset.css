@@ -174,8 +174,6 @@ select {
 }
 
 button {
-    font-family: 'Proxima Nova', Arial;
-    font-size: inherit;
   border: none;
   outline: none;
   padding: 0;

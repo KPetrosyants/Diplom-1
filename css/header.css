@@ -22,16 +22,12 @@
   max-width: 600px;
   width: 100%;
 }
-.nav {
-}
 .nav__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 5px 10px;
-}
-.nav__list-item {
 }
 .nav__link {
   position: relative;

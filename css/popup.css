@@ -13,8 +13,11 @@
   justify-content: center;
   align-items: center;
 }
-.popupCalc--opened .popup,
-.popup--opened .popup {
+.popupCalc--opened .popup:has(.popup__body-calc) {
+  visibility: visible;
+  opacity: 1;
+}
+.popup--opened .popup:has(.popup__body) {
   visibility: visible;
   opacity: 1;
 }
